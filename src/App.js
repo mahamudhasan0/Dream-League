@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const value = JSON.parse(localStorage.getItem("team")) || "";
-  const [teamName, setTeamName] = useState(value);
+  const [teamName] = useState(value);
   return (
     <div>
       <Router>
@@ -17,7 +17,7 @@ function App() {
             path={
               teamName
                 ? `/singleTeam/${teamName.team.strTeam}`
-                : "/singleTeam/${teamName.team.strTeam}"
+                : `/singleTeam/${teamName.team.strTeam}`
             }
             component={SingleTeam}
           />
